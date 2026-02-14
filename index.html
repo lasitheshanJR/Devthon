@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=FM+Abhaya&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala&display=swap" rel="stylesheet" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MYBUS - Next Gen Transport</title>
+  <script>
+    // Global Error Logger for Debugging
+    window.addEventListener("error", function (e) {
+      var div = document.createElement("div");
+      div.style.cssText = "position:fixed;top:0;left:0;z-index:99999;background:red;color:white;padding:10px;font-size:10px;width:100%;word-break:break-all";
+      div.innerText = "SCRIPTERROR: " + e.message + " at " + (e.filename || "unknown") + ":" + e.lineno;
+      document.body.appendChild(div);
+    });
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="./src/main.jsx"></script>
+</body>
+
+</html>

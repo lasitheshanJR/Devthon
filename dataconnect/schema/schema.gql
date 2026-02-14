@@ -1,0 +1,56 @@
+type User @table {
+  displayName: String!
+  email: String!
+  createdAt: Timestamp!
+  phoneNumber: String
+  address: String
+}
+
+type BusOperator @table {
+  name: String!
+  contactEmail: String!
+  createdAt: Timestamp!
+  phoneNumber: String
+  address: String
+}
+
+type Bus @table {
+  busOperator: BusOperator
+  model: String!
+  licensePlate: String!
+  capacity: Int!
+  createdAt: Timestamp!
+  amenities: [String]
+}
+
+type Route @table {
+  busOperator: BusOperator
+  origin: String!
+  destination: String!
+  distance: Float!
+  estimatedTravelTime: Int!
+  createdAt: Timestamp!
+  stops: [String]
+}
+
+type Schedule @table {
+  bus: Bus
+  route: Route
+  departureTime: Timestamp!
+  arrivalTime: Timestamp!
+  travelDate: Date!
+  price: Float!
+  availableSeats: Int!
+  createdAt: Timestamp!
+}
+
+type Booking @table {
+  user: User
+  schedule: Schedule
+  bookingDate: Timestamp!
+  numberOfSeats: Int!
+  totalPrice: Float!
+  status: String!
+  createdAt: Timestamp!
+  seatNumbers: [String]
+}
